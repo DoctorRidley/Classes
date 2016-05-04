@@ -1,0 +1,142 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <cstdlib>
+#include <cmath>
+#include <limits>
+using namespace std;
+
+void readData(const string& filename, vector<double>& angle, vector<double>& coefficient);
+double interpolation(double userAngle, const vector<double>& angle, const vector<double>& coefficient);
+bool isOrdered(const vector<double> & v);
+void reorder(vector<double>& angle, vector<double>& coefficient);
+unsigned SearchSmallestIndex(const vector<double>& v, int index);
+
+int main () {
+   vector<double> angle;
+   vector<double> coefficient;
+   double userAngle = 0.0;
+   string filename;
+   bool order = true;
+   
+   cout << "Enter name of input data file:" << endl;
+   cin >> filename;
+   cout << endl;
+
+   readData(filename, angle, coefficient);
+   
+   cout << "Enter flight path angle: ";
+   cin >> userAngle;
+   
+   order = isOrdered(angle);
+   if (order) {
+      if ((userAngle < angle.at(0)) || (userAngle > angle.at(angle.size() - 1))) {
+         cout << "UINT_MAX" << endl; //returns uint_max if angle out of bounds
+      }
+         cout << interpolation(userAngle, angle, coefficient);
+   }
+   
+   else { //if the vector is not in order;
+      reorder(angle, coefficient);
+   }
+   if ((userAngle < angle.at(0)) || (userAngle > angle.at(angle.size() - 1))) {
+      cout << "UINT_MAX" << endl; //returns uint_max if angle out of bounds
+   }
+      cout << interpolation(userAngle, angle, coefficient) << endl;
+   return 0;
+}
+
+void readData(const string& s, vector<double>& a, vector<double>& c) {
+   ifstream inFS;
+   double angle = 0;
+   double coefficient = 0;
+   string wasted; //receives \n, whitespace, etc.
+   
+   inFS.open(s.c_str());
+   if(!inFS.is_open()) { //Abort program if file does not open
+      cout << "Error opening " << s << endl;
+      exit (1);
+   }
+   
+   while (inFS >> angle >> coefficient) { //Fills a vector with the angles
+      a.push_back(angle);
+      c.push_back(coefficient);
+   }
+   
+   inFS.close();
+   return;
+}
+double interpolation(double input, const vector<double>& angle, const vector<double>& coefficient) {
+   //is user enters a number out of range, func shouldn't work. error -> ask for something else, or check
+   //for valid stuff before function
+   unsigned int i = 0;
+   double coefLift = 0;
+   double a = 0.0; //the one before input (input - 1)
+   double c = 0.0; //the one after input  (input + 1)
+   int A = 0; //Index at vector where a is
+   int C = 0; //Index at vector where c is
+   
+   for (i = 0; i < angle.size(); ++i) {
+      if (angle.at(i) > input) { //As soon as there is a number at the index greater than
+         c = angle.at(i);        //user input, a is set to the number at the index
+         a = angle.at(i - 1); //Because the vector is already in order, 
+         break;
+      }
+   }
+   
+   for (i = 0; i < angle.size(); ++i) {
+      if (fabs(angle.at(i) - a) < 0.0001) { //when a is found in the vector
+         A = i;                       //L will be set to the vector at a
+      }
+      else if (angle.at(i) - c < 0.0001) {  //When c is found in the vector
+         C = i;                       //N will be set to the index at c
+      }
+   }
+   for (i = 0; i < angle.size(); ++i) {
+      if (fabs(angle.at(i) - input) < 0.0001 ) { //when input is found within the vector
+         coefLift = coefficient.at(i); //Do the same thing with a and c as did with input
+         //as in put through a loop and find them.
+         return coefLift;
+      }
+   }
+
+   coefLift = coefficient.at(A) + (input - a)/(c - a) * (coefficient.at(C) - coefficient.at(A));
+   return coefLift;
+}
+bool isOrdered(const vector<double>& v) {
+   unsigned int i = 0;
+   bool order = true;
+   for(i = 0; (i + 1) < v.size(); ++i) {
+      if (v.at(i) <= v.at(i + 1)) {
+         order =  true;
+      }
+      else {
+         return false;
+      }
+   }
+   cout << "FIX ME" << order << endl;
+   return order;
+}
+void reorder(vector<double>& a, vector<double>& c) {
+   unsigned int i = 0;
+   int temp = 0;
+
+   for (i = 0; i < a.size(); ++i) {
+      temp = SearchSmallestIndex(a, i);
+      swap(a.at(i), a.at(temp));
+      swap(c.at(i), c.at(temp));
+   }
+   return;
+}
+unsigned SearchSmallestIndex(const vector<double>& v, int index) {
+   unsigned int position = 0;
+   unsigned int i = 0;
+   
+   position = index;
+	for(i = position + 1; i < v.size(); ++i) {
+		if(v.at(i) < v.at(position)) {
+			position = i;
+		}
+	}
+	return position;
+}

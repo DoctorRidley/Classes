@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Classes.Windows"
         mc:Ignorable="d"
-        Title="Login" Height="250" Width="390" ResizeMode="NoResize">
+        Title="Login" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
     <Grid>
 
         <TabControl Grid.Column="1" Grid.Row="0">
@@ -64,9 +64,82 @@
                 </Grid>
             </TabItem>
 
+            <TabItem Header="Register">
+                <Grid Name="RegisterTabGrid">
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="25"/>
+
+                        <!-- Labels and Textboxes -->
+                        <ColumnDefinition Width="Auto"/>
+
+                        <ColumnDefinition Width="50"/>
+
+                        <!-- Buttons -->
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="75"/>
+
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="*"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+
+                        <!-- First Name Label/Box -->
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+
+                        <!-- Last Name Label/Box -->
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+
+                        <!-- Email Label/Box -->
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+
+                        <!-- Username Label/Box -->
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+
+                        <!-- Password Label/Box-->
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+
+                        <!-- Buttons -->
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
 
 
-            <TabItem Header="Register" Grid.Column="3" Grid.Row="0"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label x:Name="Reg_First_Name_Label" Content="First Name" Grid.Column="1" Grid.Row="0"/>
+                    <TextBox x:Name="Reg_First_Name_Textbox" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" MaxWidth="313.296666666667"/>
+
+                    <Label x:Name="Reg_Last_Name_Label" Content="Last Name" Grid.Column="1" Grid.Row="2"/>
+                    <TextBox x:Name="Reg_Last_Name_Textbox" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="5" MaxWidth="313.296666666667"/>
+
+                    <Label x:Name="Reg_Email_Label" Content="Email" Grid.Column="1" Grid.Row="4"/>
+                    <TextBox x:Name="Reg_Email_Textbox" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="5" MaxWidth="313.296666666667"/>
+
+                    
+                    <Label x:Name="Reg_username_label" Content="Username" Grid.Column="1" Grid.Row="6"/>
+                    <TextBox x:Name="Reg_username_textbox" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="5" MaxWidth="313.296666666667"/>
+
+                    <Label x:Name="Reg_password_label" Content="Password" Grid.Column="1" Grid.Row="8"/>
+                    <PasswordBox x:Name="Reg_password_textbox" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="5" MaxWidth="313.296666666667"/>
+
+
+                    <Button x:Name="Clear_Btn" Content="Clear" Grid.Column="3" Grid.Row="11"/>
+                    <Button x:Name="Register_Btn" Content="Login" Grid.Column="4" Grid.Row="11"/>
+                    
+                </Grid>
+
+            </TabItem>
         </TabControl>
     </Grid>
 </local:Window>

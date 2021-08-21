@@ -17,7 +17,8 @@ namespace Classes.Windows {
     /// Interaction logic for Dashboard.xaml
     /// </summary>
     public partial class Dashboard : Window {
-        public Dashboard() : base("Dashboard", "/dashboard"){
+
+        public Dashboard() : base("Dashboard", "/dashboard") {
             InitializeComponent();
         }
     }

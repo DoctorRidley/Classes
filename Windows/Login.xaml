@@ -8,7 +8,7 @@
         Title="Login" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
     <Grid>
 
-        <TabControl Grid.Column="1" Grid.Row="0">
+        <TabControl>
             <TabItem Header="Login">
 
                 <Grid Name="LoginTabGrid">

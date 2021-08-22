@@ -1,0 +1,82 @@
+﻿<local:Window x:Class="Classes.Windows.Profile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Classes.Windows"
+        mc:Ignorable="d"
+        Title="Profile" ResizeMode="NoResize" Height="450" Width="800" >
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+
+            <!-- Name/Pic/Whatever -->
+            <ColumnDefinition Width="200"/>
+
+            <!-- General Info -->
+            <ColumnDefinition Width="300"/>
+
+            <!-- Degree information -->
+            <ColumnDefinition Width="300"/>
+
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid x:Name="Profile" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0"/>
+            <Label Content="Name" Grid.Row="1"/>
+            <Label Content="Email: " Grid.Row="2"/>
+
+        </Grid>
+
+        <Grid x:Name="Information" Grid.Column="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="General Information" FontWeight="Bold" FontSize="14"/>
+            <Label Content="Level:" Grid.Row="1" FontSize="12"/>
+            <Label Content="Class:" Grid.Row="2" FontSize="12"/>
+            <Label Content="Academic Standing:" Grid.Row="3" FontSize="12"/>
+            <Label Content="Expected Graduation Term:" Grid.Row="4" FontSize="12"/>
+
+        </Grid>
+
+        <Grid x:Name="Classes" Grid.Column="2">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="200"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Degree Information" Grid.Row="0" FontWeight="Bold" FontSize="14"/>
+            <ListBox x:Name="Degree_Info_ListBox" Grid.Row="1">
+                <ListBoxItem Content="Degree:"/>
+                <ListBoxItem Content="College:"/>
+                <ListBoxItem Content="Major:"/>
+                <ListBoxItem Content="Concentration:"/>
+                <ListBoxItem Content="Minor:"/>
+            </ListBox>
+            <Label Content="Registered Classes" Grid.Row="2" FontWeight="Bold" FontSize="14"/>
+            <ListBox x:Name="Class_Info_ListBox" Grid.Row="3"/>
+        </Grid>
+
+
+    </Grid>
+</local:Window>

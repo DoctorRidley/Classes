@@ -6,33 +6,23 @@
         xmlns:local="clr-namespace:Classes.Windows"
         mc:Ignorable="d"
         Title="Dashboard" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
-    
+
     <Grid>
-        <TabControl>
-            <TabItem Header="Profile">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        
-                    </Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="100"/>
 
-                    <Grid.RowDefinitions>
-                        
-                    </Grid.RowDefinitions>
-                </Grid>
-            </TabItem>
+        </Grid.ColumnDefinitions>
 
-            <TabItem Header="Classes">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        
-                    </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
 
-                    <Grid.RowDefinitions>
-                        
-                    </Grid.RowDefinitions>
-                </Grid>
-            </TabItem>
-            
-        </TabControl>
+        <Button Content="Classes" Grid.Column="1" Grid.Row="1"/>
     </Grid>
 </local:Window>

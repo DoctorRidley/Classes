@@ -28,11 +28,13 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
             <Image Grid.Row="0"/>
-            <Label Content="Name" Grid.Row="1"/>
+            <Label Content="Name:" Grid.Row="1"/>
             <Label Content="Email: " Grid.Row="2"/>
+            <Label Content="Phone:" Grid.Row="3"/>
 
         </Grid>
 
@@ -60,9 +62,9 @@
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="200"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="200"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
             <Label Content="Degree Information" Grid.Row="0" FontWeight="Bold" FontSize="14"/>
@@ -73,6 +75,8 @@
                 <ListBoxItem Content="Concentration:"/>
                 <ListBoxItem Content="Minor:"/>
             </ListBox>
+            
+            
             <Label Content="Registered Classes" Grid.Row="2" FontWeight="Bold" FontSize="14"/>
             <ListBox x:Name="Class_Info_ListBox" Grid.Row="3"/>
         </Grid>

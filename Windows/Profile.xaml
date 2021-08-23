@@ -23,7 +23,7 @@
 
         </Grid.ColumnDefinitions>
 
-        <Grid x:Name="Profile" Grid.Column="0">
+        <Grid x:Name="User" Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>

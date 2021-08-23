@@ -10,10 +10,9 @@ namespace Classes.Windows {
         public Window(string name, string route) {
             this.name = name;
             this.route = route;
-
         }
 
-        public string Name => name;
+        public new string Name => name;
 
         public string Route => route;
 

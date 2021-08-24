@@ -18,7 +18,7 @@ namespace Classes.Windows {
     /// </summary>
     public partial class StudentClasses : Window {
 
-        public StudentClasses() : base("Class Registration", "student-register") {
+        public StudentClasses() : base("Class Registration", "student-classes") {
             InitializeComponent();
         }
     }

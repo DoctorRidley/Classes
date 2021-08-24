@@ -8,5 +8,36 @@
         Title="FacultyClasses" Height="450" Width="800">
     <Grid>
         
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Search Results" Grid.Row="2" Grid.Column="1" FontWeight="Bold" FontSize="14"/>
+        <ListBox x:Name="Searched_ListBox" Grid.Row="3" Grid.Column="1">
+            
+        </ListBox>
+
+        <Label Content="Classes to Change" Grid.Row="2" Grid.Column="2" FontWeight="Bold" FontSize="14"/>
+        <ListBox x:Name="Remove_ListBox" Grid.Row="3" Grid.Column="2">
+            
+        </ListBox>
+
+        <Button x:Name="Add_Class_Btn" Content="Add Class" Grid.Column="3" Grid.Row="1"/>
+        <Button x:Name="Search_Btn" Content="Search" Grid.Column="3" Grid.Row="2"/>
+        <Button x:Name="Submit_Btn" Content="Submit" Grid.Column="3" Grid.Row="4"/>
+
     </Grid>
 </local:Window>

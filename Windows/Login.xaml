@@ -60,7 +60,7 @@
                     <PasswordBox x:Name="password_textbox" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="5" MaxWidth="313.296666666667"/>
 
 
-                    <Button x:Name="Login_Btn" Content="Login" Grid.Column="3" Grid.Row="6"/>
+                    <Button x:Name="Login_Btn" Content="Login" Grid.Column="3" Grid.Row="6" Click="Login_Btn_Click"/>
                 </Grid>
             </TabItem>
 

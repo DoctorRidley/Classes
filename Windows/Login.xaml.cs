@@ -20,5 +20,12 @@ namespace Classes.Windows {
         public Login() : base("Welcome", "/welcome") {
             InitializeComponent();
         }
+
+        private void Login_Btn_Click(object sender, RoutedEventArgs e) {
+            string username = username_textbox.Text;
+            string password = password_textbox.Password;
+
+            // TODO: use service class to handle user login
+        }
     }
 }

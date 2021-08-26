@@ -117,25 +117,24 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <Label x:Name="Reg_First_Name_Label" Content="First Name" Grid.Column="1" Grid.Row="0"/>
-                    <TextBox x:Name="Reg_First_Name_Textbox" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="6" MaxWidth="292.083333333333"/>
+                    <Label x:Name="reg_first_name_label" Content="First Name" Grid.Column="1" Grid.Row="0"/>
+                    <TextBox x:Name="reg_first_name_textbox" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="6" MaxWidth="292.083333333333"/>
 
-                    <Label x:Name="Reg_Last_Name_Label" Content="Last Name" Grid.Column="1" Grid.Row="2"/>
-                    <TextBox x:Name="Reg_Last_Name_Textbox" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="6" MaxWidth="292.083333333333"/>
+                    <Label x:Name="reg_last_name_label" Content="Last Name" Grid.Column="1" Grid.Row="2"/>
+                    <TextBox x:Name="reg_last_name_textbox" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="6" MaxWidth="292.083333333333"/>
 
-                    <Label x:Name="Reg_Email_Label" Content="Email" Grid.Column="1" Grid.Row="4"/>
-                    <TextBox x:Name="Reg_Email_Textbox" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="6" MaxWidth="292.083333333333"/>
+                    <Label x:Name="reg_email_label" Content="Email" Grid.Column="1" Grid.Row="4"/>
+                    <TextBox x:Name="reg_email_textbox" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="6" MaxWidth="292.083333333333"/>
 
-                    
-                    <Label x:Name="Reg_username_label" Content="Username" Grid.Column="1" Grid.Row="6"/>
-                    <TextBox x:Name="Reg_username_textbox" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="6" MaxWidth="292.083333333333"/>
+                    <Label x:Name="reg_username_label" Content="Username" Grid.Column="1" Grid.Row="6"/>
+                    <TextBox x:Name="reg_username_textbox" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="6" MaxWidth="292.083333333333"/>
 
-                    <Label x:Name="Reg_password_label" Content="Password" Grid.Column="1" Grid.Row="8"/>
-                    <PasswordBox x:Name="Reg_password_textbox" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="6" MaxWidth="292.083333333333"/>
+                    <Label x:Name="reg_password_label" Content="Password" Grid.Column="1" Grid.Row="8"/>
+                    <PasswordBox x:Name="reg_password_textbox" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="6" MaxWidth="292.083333333333"/>
 
 
                     <Button x:Name="Clear_Btn" Content="Clear" Grid.Column="3" Grid.Row="11" Click="Clear_Btn_Click"/>
-                    <Button x:Name="Register_Btn" Content="Login" Grid.Column="5" Grid.Row="11"/>
+                    <Button x:Name="Register_Btn" Content="Register" Grid.Column="5" Grid.Row="11" Click="Register_Btn_Click"/>
                     
                 </Grid>
 

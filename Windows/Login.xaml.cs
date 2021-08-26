@@ -29,11 +29,21 @@ namespace Classes.Windows {
         }
 
         private void Clear_Btn_Click(object sender, RoutedEventArgs e) {
-            Reg_First_Name_Textbox.Text = "";
-            Reg_Last_Name_Textbox.Text = "";
-            Reg_Email_Textbox.Text = "";
-            Reg_username_textbox.Text = "";
-            Reg_password_textbox.Password = "";
+            reg_first_name_textbox.Text = "";
+            reg_last_name_textbox.Text = "";
+            reg_email_textbox.Text = "";
+            reg_username_textbox.Text = "";
+            reg_password_textbox.Password = "";
+        }
+
+        private void Register_Btn_Click(object sender, RoutedEventArgs e) {
+            string first_name = reg_first_name_textbox.Text;
+            string last_name = reg_last_name_textbox.Text;
+            string email = reg_email_textbox.Text;
+            string username = reg_username_textbox.Text;
+            string password = reg_password_textbox.Password;
+
+            // TODO: user service class to handle user registration
         }
     }
 }

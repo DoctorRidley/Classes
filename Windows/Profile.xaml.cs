@@ -14,10 +14,10 @@ using System.Windows.Shapes;
 
 namespace Classes.Windows {
     /// <summary>
-    /// Interaction logic for Welcome.xaml
+    /// Interaction logic for Profile.xaml
     /// </summary>
-    public partial class Welcome : Window {
-        public Welcome() : base("Welcome", "/welcome") {
+    public partial class Profile : Window {
+        public Profile() : base("profile", "/profile") {
             InitializeComponent();
         }
     }

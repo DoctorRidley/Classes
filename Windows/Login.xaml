@@ -1,0 +1,144 @@
+﻿<local:Window x:Class="Classes.Windows.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Classes.Windows"
+        mc:Ignorable="d"
+        Title="Login" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
+    <Grid>
+
+        <TabControl>
+            <TabItem Header="Login">
+
+                <Grid Name="LoginTabGrid">
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="25"/>
+
+                        <!-- Labels and Textboxes -->
+                        <ColumnDefinition Width="Auto"/>
+
+                        <ColumnDefinition Width="50"/>
+
+                        <!-- Buttons -->
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="75"/>
+
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="*"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+
+                        <!-- Username Label/Box -->
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+
+                        <!-- Password Label/Box-->
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+
+                        <!-- Buttons -->
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="30"/>
+
+
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label x:Name="username_label" Content="Username" Grid.Column="1" Grid.Row="1"/>
+                    <TextBox x:Name="username_textbox" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="5" MaxWidth="313.296666666667"/>
+
+                    <Label x:Name="password_label" Content="Password" Grid.Column="1" Grid.Row="3"/>
+                    <PasswordBox x:Name="password_textbox" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="5" MaxWidth="313.296666666667"/>
+
+
+                    <Button x:Name="Login_Btn" Content="Login" Grid.Column="3" Grid.Row="6" Click="Login_Btn_Click"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Register">
+                <Grid Name="RegisterTabGrid">
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="25"/>
+
+                        <!-- Labels and Textboxes -->
+                        <ColumnDefinition Width="Auto"/>
+
+                        <ColumnDefinition Width="50"/>
+
+                        <!-- Buttons -->
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+
+                        <!-- First Name Label/Box -->
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+
+                        <!-- Last Name Label/Box -->
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+
+                        <!-- Email Label/Box -->
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+
+                        <!-- Username Label/Box -->
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+
+                        <!-- Password Label/Box-->
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+
+                        <!-- Buttons -->
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+
+
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label x:Name="reg_first_name_label" Content="First Name" Grid.Column="1" Grid.Row="0"/>
+                    <TextBox x:Name="reg_first_name_textbox" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="6" MaxWidth="292.083333333333"/>
+
+                    <Label x:Name="reg_last_name_label" Content="Last Name" Grid.Column="1" Grid.Row="2"/>
+                    <TextBox x:Name="reg_last_name_textbox" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="6" MaxWidth="292.083333333333"/>
+
+                    <Label x:Name="reg_email_label" Content="Email" Grid.Column="1" Grid.Row="4"/>
+                    <TextBox x:Name="reg_email_textbox" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="6" MaxWidth="292.083333333333"/>
+
+                    <Label x:Name="reg_username_label" Content="Username" Grid.Column="1" Grid.Row="6"/>
+                    <TextBox x:Name="reg_username_textbox" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="6" MaxWidth="292.083333333333"/>
+
+                    <Label x:Name="reg_password_label" Content="Password" Grid.Column="1" Grid.Row="8"/>
+                    <PasswordBox x:Name="reg_password_textbox" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="6" MaxWidth="292.083333333333"/>
+
+
+                    <Button x:Name="Clear_Btn" Content="Clear" Grid.Column="3" Grid.Row="11" Click="Clear_Btn_Click"/>
+                    <Button x:Name="Register_Btn" Content="Register" Grid.Column="5" Grid.Row="11" Click="Register_Btn_Click"/>
+                    
+                </Grid>
+
+            </TabItem>
+        </TabControl>
+    </Grid>
+</local:Window>

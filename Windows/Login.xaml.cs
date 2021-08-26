@@ -17,7 +17,7 @@ namespace Classes.Windows {
     /// Interaction logic for Welcome.xaml
     /// </summary>
     public partial class Login : Window {
-        public Login() : base("Welcome", "/welcome") {
+        public Login() : base("Login", "/login") {
             InitializeComponent();
         }
 

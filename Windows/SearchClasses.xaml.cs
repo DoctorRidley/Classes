@@ -17,7 +17,7 @@ namespace Classes.Windows {
     /// Interaction logic for SearchClasses.xaml
     /// </summary>
     public partial class SearchClasses : Window {
-        public SearchClasses() : base("Search Classes", "search-classes") {
+        public SearchClasses() : base("Search Classes", "/search-classes") {
             InitializeComponent();
         }
     }

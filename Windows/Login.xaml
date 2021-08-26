@@ -134,7 +134,7 @@
                     <PasswordBox x:Name="Reg_password_textbox" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="6" MaxWidth="292.083333333333"/>
 
 
-                    <Button x:Name="Clear_Btn" Content="Clear" Grid.Column="3" Grid.Row="11"/>
+                    <Button x:Name="Clear_Btn" Content="Clear" Grid.Column="3" Grid.Row="11" Click="Clear_Btn_Click"/>
                     <Button x:Name="Register_Btn" Content="Login" Grid.Column="5" Grid.Row="11"/>
                     
                 </Grid>

@@ -27,5 +27,13 @@ namespace Classes.Windows {
 
             // TODO: use service class to handle user login
         }
+
+        private void Clear_Btn_Click(object sender, RoutedEventArgs e) {
+            Reg_First_Name_Textbox.Text = "";
+            Reg_Last_Name_Textbox.Text = "";
+            Reg_Email_Textbox.Text = "";
+            Reg_username_textbox.Text = "";
+            Reg_password_textbox.Password = "";
+        }
     }
 }

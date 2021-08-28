@@ -18,14 +18,22 @@ namespace Classes.Services {
         public UserService(StudentRepo s) => student_repo = s;
 
         public Person Login(string username, string password) {
+            return null;
 
         }
 
 
-        private byte[] Hash_Password(string password) {
+        private string Hash_Password(string password) {
 
-            //byte[] = System.Convert.ToByte(password);
-            //byte[] hash = SHA512.Create().ComputeHash(password);
+            byte[] raw_string = Encoding.ASCII.GetBytes(password);
+            string hash = SHA512.Create().ComputeHash(raw_string).ToString();
+
+            string salt = DateTime.Now.ToString();
+
+            string final = "$" + salt + "$" + hash;
+
+            return final;
+            
         }
     }
 

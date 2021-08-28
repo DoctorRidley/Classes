@@ -11,28 +11,32 @@ using Classes.Models;
 
 namespace Classes.Services {
 
-    class UserService {
+    public class UserService {
 
         private readonly StudentRepo student_repo;
 
         public UserService(StudentRepo s) => student_repo = s;
 
         public Person Login(string username, string password) {
-            return null;
 
+            string hash = Hash_Password(password);
+
+            return null;
         }
 
 
-        private string Hash_Password(string password) {
+        public string Hash_Password(string password) {
 
             byte[] raw_string = Encoding.ASCII.GetBytes(password);
-            string hash = SHA512.Create().ComputeHash(raw_string).ToString();
+            byte[] raw_hash = SHA512.Create().ComputeHash(raw_string);
+
+            string str_hash = BitConverter.ToString(raw_hash).Replace("-", "").ToLower();
 
             string salt = DateTime.Now.ToString();
 
-            string final = "$" + salt + "$" + hash;
+            string final = "$" + salt + "$" + str_hash;
 
-            return final;
+            return str_hash;
             
         }
     }

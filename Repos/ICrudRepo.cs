@@ -9,15 +9,15 @@ using Classes.Models;
 
 namespace Classes.Repos {
     
-    public interface ICrudRepo {
+    public interface ICrudRepo<T> {
 
-        public void Create(Person new_user);
+        public void Create(T new_user);
 
-        public Person Find_By_Username(string username);
+        public T Find_By_String(string username);
 
-        public void Update(Person person);
+        public void Update(T person);
 
-        public void Delete(Person person);
+        public void Delete(T person);
 
         
 

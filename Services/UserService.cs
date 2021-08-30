@@ -19,25 +19,19 @@ namespace Classes.Services {
 
         public Person Login(string username, string password) {
 
-            string hash = Hash_Password(password);
+            
+            string hash = Hash_Password("temp", password);
 
             return null;
         }
 
 
-        public string Hash_Password(string password) {
+        private string Hash_Password(string salt, string password) {
 
-            byte[] raw_string = Encoding.ASCII.GetBytes(password);
+            byte[] raw_string = Encoding.ASCII.GetBytes(salt + password + salt);
             byte[] raw_hash = SHA512.Create().ComputeHash(raw_string);
 
-            string str_hash = BitConverter.ToString(raw_hash).Replace("-", "").ToLower();
-
-            string salt = DateTime.Now.ToString();
-
-            string final = "$" + salt + "$" + str_hash;
-
-            return str_hash;
-            
+            return BitConverter.ToString(raw_hash).Replace("-", "");
         }
     }
 
